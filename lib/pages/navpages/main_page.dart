@@ -18,8 +18,8 @@ class _MainPageState extends State<MainPage> {
 
   List pages = [
     HomePage(),
-    PredictionPage(),
     SearchPage(),
+    PredictionPage(),
     BookmarkPage(),
     AccountPage()
   ];
