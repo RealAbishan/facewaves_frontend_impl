@@ -1,3 +1,4 @@
+import 'package:facewaves_frontend/pages/navpages/main_page.dart';
 import 'package:facewaves_frontend/pages/welcome_page.dart';
 import 'package:flutter/material.dart';
 
@@ -25,7 +26,8 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: WelcomePage()
+      // home: WelcomePage()
+      home: MainPage(),
     );
   }
 }
