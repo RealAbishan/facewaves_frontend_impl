@@ -2,6 +2,7 @@ import 'package:facewaves_frontend/constants/AppColors.dart';
 import 'package:facewaves_frontend/widgets/app_large.text.dart';
 import 'package:facewaves_frontend/widgets/app_text.dart';
 import 'package:facewaves_frontend/widgets/responsive_button.dart';
+import 'package:facewaves_frontend/pages/main_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -77,7 +78,31 @@ class _WelcomePageState extends State<WelcomePage> {
                       ),
                       SizedBox(height: 40,),
 
-                      ResponsiveButton(width: 120,)
+                      // ResponsiveButton(width: 120,)
+
+                      Container(
+                        width: 300,
+                        height: 50,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(30),
+                            color: kPrimaryColor
+                        ),
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            primary: kPrimaryColor,
+                              padding:  const EdgeInsets.only(bottom: 2),
+                              textStyle: TextStyle(
+                              fontSize: 30,
+                              fontWeight: FontWeight.bold
+                            )
+                          ),
+                          onPressed: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => MainPage()));
+                          },
+
+                          child: Image.asset("assets/arrow.png"),
+                        ),
+                      )
 
 
                     ],

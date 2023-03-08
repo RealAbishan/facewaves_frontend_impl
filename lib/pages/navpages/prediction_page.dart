@@ -44,7 +44,7 @@ class _PredictionPageState extends State<PredictionPage> {
             child: Row(
               children: [
                 Container(
-                  margin: const EdgeInsets.only(right: 50),
+                  margin: const EdgeInsets.only(right: 45, left: 35),
                   width: 300,
                   height: 300,
                   alignment: Alignment.center,
@@ -83,7 +83,7 @@ class _PredictionPageState extends State<PredictionPage> {
               margin: const EdgeInsets.only(left: 20, right: 20),
               child: CustomResponsiveButton(
                 iconData: Icons.camera_enhance_outlined,
-                text: "Camera",
+                text: "Select from Camera",
               )
           ),
         ],

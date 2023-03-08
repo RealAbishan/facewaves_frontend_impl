@@ -1,5 +1,6 @@
 import 'package:facewaves_frontend/constants/AppColors.dart';
 import 'package:facewaves_frontend/widgets/app_large.text.dart';
+import 'package:facewaves_frontend/pages/detail_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -144,16 +145,22 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 itemCount: 4,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (BuildContext context, int index) {
-                  return Container(
-                    margin: const EdgeInsets.only(right: 15, top: 15),
-                    width: 150,
-                    height: 150,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        color: Colors.white,
-                        image: DecorationImage(
-                            image: AssetImage("assets/" + treindingImages[index]),
-                            fit: BoxFit.cover)),
+                  return GestureDetector(
+                    onTap:(){
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => DetailsPage()));
+                    },
+                    child: Container(
+                      margin: const EdgeInsets.only(right: 15, top: 15),
+                      width: 150,
+                      height: 150,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          color: Colors.white,
+                          image: DecorationImage(
+                              image: AssetImage("assets/" + treindingImages[index]),
+                              fit: BoxFit.cover)),
+                    ),
+
                   );
                 },
               ),
@@ -161,16 +168,22 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 itemCount: 4,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (BuildContext context, int index) {
-                  return Container(
-                    margin: const EdgeInsets.only(right: 15, top: 10),
-                    width: 150,
-                    height: 150,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        color: Colors.white,
-                        image: DecorationImage(
-                            image: AssetImage("assets/" + loveImages[index]),
-                            fit: BoxFit.cover)),
+                  return GestureDetector(
+                    onTap:(){
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => DetailsPage()));
+                    },
+                    child: Container(
+                      margin: const EdgeInsets.only(right: 15, top: 15),
+                      width: 150,
+                      height: 150,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          color: Colors.white,
+                          image: DecorationImage(
+                              image: AssetImage("assets/" + loveImages[index]),
+                              fit: BoxFit.cover)),
+                    ),
+
                   );
                 },
               ),
@@ -178,16 +191,22 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 itemCount: 4,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (BuildContext context, int index) {
-                  return Container(
-                    margin: const EdgeInsets.only(right: 15, top: 10),
-                    width: 150,
-                    height: 150,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        color: Colors.white,
-                        image: DecorationImage(
-                            image: AssetImage("assets/" + artImages[index]),
-                            fit: BoxFit.cover)),
+                  return GestureDetector(
+                    onTap:(){
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => DetailsPage()));
+                    },
+                    child: Container(
+                      margin: const EdgeInsets.only(right: 15, top: 15),
+                      width: 150,
+                      height: 150,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          color: Colors.white,
+                          image: DecorationImage(
+                              image: AssetImage("assets/" + artImages[index]),
+                              fit: BoxFit.cover)),
+                    ),
+
                   );
                 },
               ),
