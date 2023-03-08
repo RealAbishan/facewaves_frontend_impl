@@ -1,5 +1,6 @@
 import 'package:facewaves_frontend/pages/main_page.dart';
 import 'package:facewaves_frontend/pages/welcome_page.dart';
+import 'package:facewaves_frontend/pages/splash_scree.dart';
 import 'package:facewaves_frontend/pages/detail_page.dart';
 import 'package:flutter/material.dart';
 import 'package:bloc/bloc.dart';
@@ -18,8 +19,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Face Waves',
-       home: WelcomePage()
-      //   home: HomePage()
+       //home: WelcomePage()
+         home: SplashScreen()
     );
   }
 }
