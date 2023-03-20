@@ -148,7 +148,7 @@ class _DetailsPageState extends State<DetailsPage> {
                 right: 20,
                 child: Row(
                 children: [
-                  AppButtons(size: 60,
+                  AppButtons(size: 50,
                       color: kPrimaryColor,
                       backgroundColor: Colors.white,
                       borderColor: kPrimaryColor,

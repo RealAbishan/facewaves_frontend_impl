@@ -25,7 +25,7 @@ class ResponsiveButton extends StatelessWidget {
         child: Row(
           mainAxisAlignment: isResponsive==true?MainAxisAlignment.spaceBetween:MainAxisAlignment.center,
           children: [
-            isResponsive==true?Container(margin:const EdgeInsets.only(left: 30,right: 30),
+            isResponsive==true?Container(margin:const EdgeInsets.only(left: 20,right: 10),
                 child: AppText(text: "Add to favourite", color:bWhite, size: 24,)):Container(),
             Image.asset("assets/arrow.png"),
 

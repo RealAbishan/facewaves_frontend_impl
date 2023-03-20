@@ -6,12 +6,12 @@ class CustomResponsiveButton extends StatelessWidget {
   bool? isResponsive;
   double? width;
   String text;
-  IconData iconData;
+ // IconData iconData;
   final Color color;
 
   CustomResponsiveButton({super.key,
     this.width,
-    required this.iconData,
+    //this.iconData,
     required this.text,
     this.color = bWhite,
     this.isResponsive = false});
@@ -34,10 +34,9 @@ class CustomResponsiveButton extends StatelessWidget {
               color: color,
               fontSize: 20
             ),),
-          SizedBox(width: 20,),
-          Icon(iconData,
-          color: bWhite,
-          )
+          // Icon(iconData,
+          // color: bWhite,
+          // )
         ],
       ),
     );

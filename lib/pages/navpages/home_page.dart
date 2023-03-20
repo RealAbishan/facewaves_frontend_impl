@@ -83,7 +83,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
             ),
           ),
 
-          SizedBox(height: 20,),
+          SizedBox(height: 15,),
 
 
           //Disciver Text
@@ -92,7 +92,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
               child: AppLargeText(
                 text: greeting() + " " + "," + " " + "Abishan",
                 color: kPrimaryColor,
-                size: 30,
+                size: 24,
             ),
           ),
 
@@ -109,7 +109,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
             ),
           ),
 
-          SizedBox(height: 20,),
+          SizedBox(height: 15,),
 
           //Menu Text
           Container(
@@ -214,7 +214,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           ),
 
           SizedBox(
-            height: 30,
+            height: 20,
           ),
           //Row Section
           Container(
