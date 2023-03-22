@@ -3,8 +3,11 @@ import 'package:facewaves_frontend/widgets/app_large.text.dart';
 import 'package:facewaves_frontend/pages/detail_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:facewaves_frontend/authControllers/auth_controller.dart';
+import 'package:facewaves_frontend/pages/signup_page.dart';
 
 class HomePage extends StatefulWidget {
+  //final String email;
   const HomePage({Key? key}) : super(key: key);
 
   @override
@@ -63,23 +66,28 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
       body: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-            padding: const EdgeInsets.only(top: 70, left: 20),
-            child: Row(
-              children: [
-                Icon(Icons.menu, size: 30,color:kPrimaryColor),
-                Expanded(child: Container()),
-                Container(
-                  margin:const EdgeInsets.only(right: 20),
-                  width: 50,
-                  height: 50,
-                  
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: Colors.grey.withOpacity(0.3)
-                  ),
-                )
-              ],
+          GestureDetector(
+            onTap: (){
+              AuthController.instance.logOut();
+            },
+            child: Container(
+              padding: const EdgeInsets.only(top: 70, left: 20),
+              child: Row(
+                children: [
+                  Icon(Icons.menu, size: 30,color:kPrimaryColor),
+                  Expanded(child: Container()),
+                  Container(
+                    margin:const EdgeInsets.only(right: 20),
+                    width: 50,
+                    height: 50,
+
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.grey.withOpacity(0.3)
+                    ),
+                  )
+                ],
+              ),
             ),
           ),
 
@@ -90,7 +98,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           Container(
               padding: const EdgeInsets.only( left: 20),
               child: AppLargeText(
-                text: greeting() + " " + "," + " " + "Abishan",
+                text: greeting() + " " + " " + "Abishan",
                 color: kPrimaryColor,
                 size: 24,
             ),

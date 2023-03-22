@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "330995675752",
+    "project_id": "facewaves",
+    "storage_bucket": "facewaves.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:330995675752:android:354220fba85d54742581dd",
+        "android_client_info": {
+          "package_name": "com.facewaves.facewavesFrontend"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "330995675752-92nq4u1tfvqgpbqg5qfqouog5rp2raog.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyACIHxP25mw0nYGzi19ib_m8UGXfGEfBGc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "330995675752-92nq4u1tfvqgpbqg5qfqouog5rp2raog.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "330995675752-nnm2e7k7v8hcat2jj0bkqvj9ups15emu.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.facewaves.facewavesFrontend"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
