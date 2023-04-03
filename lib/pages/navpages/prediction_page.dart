@@ -1,6 +1,7 @@
 import 'package:facewaves_frontend/constants/AppColors.dart';
 import 'package:facewaves_frontend/widgets/app_large.text.dart';
 import 'package:facewaves_frontend/pages/detail_page.dart';
+import 'package:facewaves_frontend/pages/generated_poem.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:facewaves_frontend/widgets/custom_button.dart';
@@ -89,16 +90,21 @@ class _PredictionPageState extends State<PredictionPage> {
           ),
 
           SizedBox(height: 10,),
-          Container(
+          GestureDetector(
+            onTap:(){
+              Navigator.push(context, MaterialPageRoute(builder: (context) =>
+                  GeneratedPoemPage()));
+            },
+            child:  Container(
               margin: const EdgeInsets.only(left: 20, right: 20),
               child: CustomResponsiveButton(
                 // iconData: Icons.camera_enhance_outlined,
                 text: "Generate Poem",
-
-
               ),
 
+            ),
           ),
+
         ],
       ),
     );

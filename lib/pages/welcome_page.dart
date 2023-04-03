@@ -3,6 +3,7 @@ import 'package:facewaves_frontend/widgets/app_large.text.dart';
 import 'package:facewaves_frontend/widgets/app_text.dart';
 import 'package:facewaves_frontend/widgets/responsive_button.dart';
 import 'package:facewaves_frontend/pages/main_page.dart';
+import 'package:facewaves_frontend/pages/signup_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -97,7 +98,8 @@ class _WelcomePageState extends State<WelcomePage> {
                             )
                           ),
                           onPressed: (){
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => MainPage()));
+                            Navigator.push(context, MaterialPageRoute
+                              (builder: (context) => SignupPage()));
                           },
 
                           child: Image.asset("assets/arrow.png"),

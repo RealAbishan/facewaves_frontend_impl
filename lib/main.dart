@@ -28,8 +28,8 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'Face Waves',
        //home: WelcomePage()
-        home: MainPage()
-        //home: SplashScreen()
+        //home: MainPage()
+        home: SplashScreen()
     );
   }
 }

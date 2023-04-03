@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:facewaves_frontend/pages/login_page.dart';
+import 'package:facewaves_frontend/pages/splash_scree.dart';
 import 'package:facewaves_frontend/pages/navpages/home_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -10,7 +11,7 @@ class AuthController extends GetxController{
   //Where should I need this Auth Controller
   //
   /**
-   *SignUp Page,
+   * SignUp Page,
    * LogIn Page,
    * Landing Page,
    * Account Page
@@ -28,7 +29,7 @@ class AuthController extends GetxController{
   void onReady(){
     super.onReady();
     _user = Rx<User?>(auth.currentUser);
-    //usr Would be Notified
+    //user Would be Notified
     _user.bindStream(auth.userChanges());
     ever(_user, _initialScreen);
 
@@ -37,7 +38,7 @@ class AuthController extends GetxController{
   _initialScreen(User? user){
     if(user == null){
       print("LogIn Page");
-      Get.offAll(() => LogInPage());
+      Get.offAll(() => SplashScreen());
     }
     else{
       print("Home Page");

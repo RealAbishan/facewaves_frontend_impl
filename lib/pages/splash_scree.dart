@@ -21,13 +21,13 @@ class Splash extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     Timer(
-        const Duration(seconds: 5),
+        const Duration(seconds: 7),
             () => Navigator.of(context).pushReplacement(MaterialPageRoute(
             builder: (BuildContext context) => const WelcomePage())));
 
     //   var assetsImage = const AssetImage(
     //     '/assets/Logos/AllGreen.png'); //<- Creates an object that fetches an image.
-    var image = Image.asset('assets/Logo.jpg',
+    var image = Image.asset('assets/All WhiteWithBrownBG.jpg',
         height: 250,
         fit: BoxFit.scaleDown); //<- Creates a widget that displays an image.
 

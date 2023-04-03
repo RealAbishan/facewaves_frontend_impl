@@ -13,14 +13,14 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:dio/dio.dart';
 
-class DetailsPage extends StatefulWidget {
-  const DetailsPage({Key? key}) : super(key: key);
+class GeneratedPoemPage extends StatefulWidget {
+  const GeneratedPoemPage({Key? key}) : super(key: key);
 
   @override
-  State<DetailsPage> createState() => _DetailsPageState();
+  State<GeneratedPoemPage> createState() => _GeneratedPoemPageState();
 }
 
-class _DetailsPageState extends State<DetailsPage> {
+class _GeneratedPoemPageState extends State<GeneratedPoemPage> {
 
   // @override
   // void initState(){
@@ -76,17 +76,17 @@ class _DetailsPageState extends State<DetailsPage> {
                 left:0,
                 right: 0,
                 child: Container(
-                width: double.maxFinite,
+                  width: double.maxFinite,
                   height: 350,
                   decoration: BoxDecoration(
                     image: DecorationImage(image: AssetImage(
-                      "assets/TrTwo.jpeg"
+                        "assets/TrTwo.jpeg"
                     ),
-                      fit: BoxFit.cover
+                        fit: BoxFit.cover
                     ),
 
                   ),
-            )
+                )
             ),
 
             Positioned(
@@ -97,7 +97,7 @@ class _DetailsPageState extends State<DetailsPage> {
                     IconButton(onPressed: (){
                       Navigator.push(context, MaterialPageRoute(builder: (context) => MainPage()));
                     }, icon:Icon(Icons.chevron_left_rounded,
-                    color: kPrimaryColor,
+                      color: kPrimaryColor,
                       size: 39,
                     )
                     ),
@@ -133,16 +133,16 @@ class _DetailsPageState extends State<DetailsPage> {
                   decoration: BoxDecoration(
                       color: bWhite,
                       borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(40),
-                      topRight: Radius.circular(40)
-                    )
+                          topLeft: Radius.circular(40),
+                          topRight: Radius.circular(40)
+                      )
                   ),
                   child: Column(
                     children: [
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          AppLargeText(text: "The Farewell",size: 36,color: kPrimaryColor.withOpacity(0.8),),
+                          AppLargeText(text: "காவியம்",size: 36,color: kPrimaryColor.withOpacity(0.8),),
                         ],
                       ),
                       SizedBox(height: 20,),
@@ -161,30 +161,26 @@ class _DetailsPageState extends State<DetailsPage> {
                           Container(
                             width: 350,
                             child: PoemText(
-                              text: "They say the ice will hold so there I go,forced to believe them by my act of trusting people,"
-                              "stepping out on it,and naturally it gaps open and I, forced to carry on coolly "
-                              "by my act of being imperturbable, slide erectly into the water wearing my captain's helmet, "
-                              "waving to the shore with a sad smile, "
-                                  "Goodbye my darlings, goodbye dear one,as the ice meets again over my head with a click.",
+                              text: "சிறகிலிருந்து பிரிந்த இறகு ஒன்று காற்றின் தீராத பக்கங்களில் ஒரு பறவையின் வாழ்வை எழுதிச் செல்கிறது",
                               color: kPrimaryColor,
                               size: 14,
                             ),
                           ),
-                      //     AppText(
-                      //       text: "They say the ice will hold so there I go,forced to believe them by my act of trusting people,"
-                      // "stepping out on it,and naturally it gaps open and I, forced to carry on coolly "
-                      // "by my act of being imperturbable, slide erectly into the water wearing my captain's helmet, "
-                      // "waving to the shore with a sad smile, "
-                      //     "Goodbye my darlings, goodbye dear one,as the ice meets again over my head with a click.",
-                      //        color: kPrimaryColor.withOpacity(0.45),
-                      //       size: 14,
-                      //     ),
+                          //     AppText(
+                          //       text: "They say the ice will hold so there I go,forced to believe them by my act of trusting people,"
+                          // "stepping out on it,and naturally it gaps open and I, forced to carry on coolly "
+                          // "by my act of being imperturbable, slide erectly into the water wearing my captain's helmet, "
+                          // "waving to the shore with a sad smile, "
+                          //     "Goodbye my darlings, goodbye dear one,as the ice meets again over my head with a click.",
+                          //        color: kPrimaryColor.withOpacity(0.45),
+                          //       size: 14,
+                          //     ),
                         ],
                       ),
                       SizedBox(height: 20,),
                     ],
                   ),
-            )
+                )
             ),
 
             Positioned(
@@ -192,21 +188,21 @@ class _DetailsPageState extends State<DetailsPage> {
                 left: 20,
                 right: 20,
                 child: Row(
-                children: [
-                  AppButtons(size: 50,
-                      color: kPrimaryColor,
-                      backgroundColor: Colors.white,
-                      borderColor: kPrimaryColor,
-                      isIcon:true,
-                      icon:Icons.favorite_border
-                  ),
+                  children: [
+                    AppButtons(size: 50,
+                        color: kPrimaryColor,
+                        backgroundColor: Colors.white,
+                        borderColor: kPrimaryColor,
+                        isIcon:true,
+                        icon:Icons.favorite_border
+                    ),
 
-                  SizedBox(width: 20,),
-                  ResponsiveButton(
-                    isResponsive:true,
-                  )
-              ],
-            ))
+                    SizedBox(width: 20,),
+                    ResponsiveButton(
+                      isResponsive:true,
+                    )
+                  ],
+                ))
           ],
         ),
       ),
