@@ -31,7 +31,7 @@ class _LogInPageState extends State<LogInPage> {
              decoration: BoxDecoration(
                image: DecorationImage(
                  image: AssetImage(
-                   "assets/welcome-one.png"
+                   "assets/TwoBg.jpg"
                  ),
                  fit: BoxFit.cover
                ),
@@ -167,7 +167,7 @@ class _LogInPageState extends State<LogInPage> {
                  borderRadius: BorderRadius.circular(30),
                  image: DecorationImage(
                      image: AssetImage(
-                         "assets/welcome-one.png"
+                         "assets/btnBg.png"
                      ),
                      fit: BoxFit.cover
                  ),
@@ -177,7 +177,7 @@ class _LogInPageState extends State<LogInPage> {
                    style: TextStyle(
                        fontSize: 36,
                        fontWeight: FontWeight.bold,
-                       color: Colors.black54
+                       color: bWhite
                    ),
                  ),
                ),

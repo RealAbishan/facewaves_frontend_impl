@@ -85,7 +85,7 @@ class _PredictionPageState extends State<PredictionPage> {
                   width: 300,
                   height: 300,
                   alignment: Alignment.center,
-                  child: image != null ? Image.file(image!):Image.network("https://cvcollective.ca/wp-content/uploads/2021/01/CVC_Vol24_GettingTheDrift_Header-940x470.jpg", fit: BoxFit.fill,),
+                  child: image != null ? Image.file(image!):Image.network("https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1200px-No-Image-Placeholder.svg.png", fit: BoxFit.fill,),
 
 
                   //CustomButton()

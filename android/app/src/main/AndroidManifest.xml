@@ -3,7 +3,7 @@
    <application
         android:label="FaceWaves"
         android:name="${applicationName}"
-        android:icon="@mipmap/fw_logo">
+        android:icon="@mipmap/facewaves-icons">
         <activity
             android:name=".MainActivity"
             android:exported="true"

@@ -16,9 +16,9 @@ class SignupPage extends StatelessWidget {
     var passwordController = TextEditingController();
 
     List imageSocialMedia = [
-      "welcome-one.png",
-      "welcome-one.png",
-      "welcome-one.png"
+      "facebook2.png",
+      "twitter.png",
+      "search.png"
     ];
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
@@ -32,7 +32,7 @@ class SignupPage extends StatelessWidget {
               decoration: BoxDecoration(
                 image: DecorationImage(
                     image: AssetImage(
-                        "assets/welcome-one.png"
+                        "assets/TwoBg.jpg"
                     ),
                     fit: BoxFit.cover
                 ),
@@ -57,7 +57,7 @@ class SignupPage extends StatelessWidget {
                                 blurRadius: 10,
                                 spreadRadius: 7,
                                 offset: Offset(1,1),
-                                color: Colors.grey.withOpacity(0.2)
+                                color: Colors.grey.withOpacity(0.1)
                             )
                           ]
                       ),
@@ -158,7 +158,7 @@ class SignupPage extends StatelessWidget {
                   borderRadius: BorderRadius.circular(30),
                   image: DecorationImage(
                       image: AssetImage(
-                          "assets/welcome-one.png"
+                          "assets/btnBg.png"
                       ),
                       fit: BoxFit.cover
                   ),
@@ -168,7 +168,7 @@ class SignupPage extends StatelessWidget {
                     style: TextStyle(
                         fontSize: 36,
                         fontWeight: FontWeight.bold,
-                        color: Colors.black54
+                        color: bWhite
                     ),
                   ),
                 ),
@@ -207,7 +207,7 @@ class SignupPage extends StatelessWidget {
                       padding: const EdgeInsets.all(10.0),
                       child: CircleAvatar(
                         radius: 30,
-                        backgroundColor: Colors.grey[500],
+                        backgroundColor: Colors.grey[200],
                         child: CircleAvatar(
                           radius: 25,
                           backgroundImage: AssetImage(
