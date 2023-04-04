@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:facewaves_frontend/constants/AppColors.dart';
 import 'package:facewaves_frontend/pages/main_page.dart';
+import 'package:facewaves_frontend/authControllers/auth_controller.dart';
 
 
 class AccountPage extends StatelessWidget {
@@ -329,23 +330,28 @@ class AccountPage extends StatelessWidget {
                   )
                 ]
             ),
-            child: Stack(
-              children: [
-                Positioned(
-                    left: 20,
-                    top: 19,
-                    child: Icon(Icons.logout_outlined, size: 24, color:
-                    Colors.red,)),
-                Positioned(
-                    left: 60,
-                    top: 20,
-                    child: Text(
-                      "Logout",
-                      style: TextStyle(fontSize: 18, color: Colors.red,
-                          fontWeight: FontWeight.bold),
-                    )),
+            child: GestureDetector(
+              onTap: (){
+                AuthController.instance.logOut();
+              },
+              child: Stack(
+                children: [
+                  Positioned(
+                      left: 20,
+                      top: 19,
+                      child: Icon(Icons.logout_outlined, size: 24, color:
+                      Colors.red,)),
+                  Positioned(
+                      left: 60,
+                      top: 20,
+                      child: Text(
+                        "Logout",
+                        style: TextStyle(fontSize: 18, color: Colors.red,
+                            fontWeight: FontWeight.bold),
+                      )),
 
-              ],
+                ],
+              ),
             ),
           ),
 
