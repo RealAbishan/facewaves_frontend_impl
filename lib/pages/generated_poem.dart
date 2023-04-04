@@ -9,6 +9,7 @@ import 'package:facewaves_frontend/widgets/poem_text.dart';
 import 'package:facewaves_frontend/widgets/app_buttons.dart';
 import 'package:facewaves_frontend/widgets/responsive_button.dart';
 import 'package:facewaves_frontend/pages/main_page.dart';
+import 'package:facewaves_frontend/pages/navpages/prediction_page.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:dio/dio.dart';
