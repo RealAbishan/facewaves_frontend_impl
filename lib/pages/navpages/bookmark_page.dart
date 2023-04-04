@@ -39,6 +39,29 @@ class _BookmarkPageState extends State<BookmarkPage> with TickerProviderStateMix
   ];
   List loveImages = ["LoOne.jpg", "LoTwo.jpg", "LoThree.jpg", "LoFour.jpeg"];
   List artImages = ["ArOne.jpg", "Artwo.jpeg", "ArThree.jpg", "ArFour.jpeg"];
+
+  //Headings
+  List loveHeading = ["அழகான நினைவுகள்", "கனவாகி கலைந்தாய்", "கால் தடம்", "ஆயுள் ஆக்ஸிஜன்", "கண் சிமிட்டா பொம்மை"];
+  List natureHeading = ["Love", "Art", "Nature", "Music", "NEA"];
+  List artHeading = ["Love", "Art", "Nature", "Music", "NEA"];
+  List musicHeading = ["Love", "Art", "Nature", "Music", "NEA"];
+  List motivationHeading = ["Love", "Art", "Nature", "Music", "NEA"];
+
+
+  //Headings
+  List lovePoem = ["விட்டு விட்டு தான் நினைக்கிறேன்... விட்டு விட தான்நினைக்கிறேன்...ஆனாலும் என் விரல் பிடித்தே வருகிறது...உன் அழகான நினைவுகள்...",
+  "இதழ் என்னும் மலர் கொண்டு கடிதங்கள் வரைந்தாய்... பதில் நானும் தரும் முன்பே"
+  "... கனவாகி கலைந்தாய்...!- என்னை நோக்கி பாயும் தோட்டா",
+    "நீ  நடந்த பாதைகளில் நானும் நடக்கிறேன். நம் காதல் தான் ஒன்று சேரவில்லை. நம் "
+        "கால் தடங்களாவது ஒன்று சேரட்டும்...!",
+    "உன் முந்தானையில் ஒரு முகக்கவசம் கொடு. ஆயுள் முழுவதும் ஆக்ஸிஜன் இன்றி "
+        "வாழ்கிறேன் உன்னுடன் நான்.",
+    "அழகிய பொம்மை என நினைத்து கண் சிமிட்டாமல் பார்த்து கொண்டிருந்தேன். நீ கண்"
+        " சிமிட்டிய நொடியில் கண் சிமிட்டா பொம்மையானேன் நான்...!"];
+  List naturePoem = ["Love", "Art", "Nature", "Music", "NEA"];
+  List artPoem = ["Love", "Art", "Nature", "Music", "NEA"];
+  List musicPoem = ["Love", "Art", "Nature", "Music", "NEA"];
+  List motivationPoem = ["Love", "Art", "Nature", "Music", "NEA"];
   @override
   Widget build(BuildContext context) {
     TabController _tabController = TabController(length: 5, vsync: this);
@@ -149,7 +172,7 @@ class _BookmarkPageState extends State<BookmarkPage> with TickerProviderStateMix
             width: double.maxFinite,
             child: TabBarView(controller: _tabController, children: [
               ListView.builder(
-                itemCount: 4,
+                itemCount: 5,
                 scrollDirection: Axis.vertical,
                 itemBuilder: (BuildContext context, int index) {
                   return GestureDetector(
@@ -161,17 +184,65 @@ class _BookmarkPageState extends State<BookmarkPage> with TickerProviderStateMix
                       width: 600,
                       height: 200,
                       decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: Colors.red,
-                          ),
+                          borderRadius: BorderRadius.all(Radius.circular(30)),
+                          color: kPrimaryColor.withOpacity(0.6),
+                          boxShadow: [
+                            BoxShadow(
+                                blurRadius: 15,
+                                spreadRadius: 1,
+                                offset: Offset(1, 1),
+                                color: Colors.grey.withOpacity(0.2))
+                          ]),
+                      child: Stack(
+                        children: [
+                          Positioned(
+                            left: 30,
+                              top: 20,
+                              child: Text(
+                                loveHeading[index],
+                                style: TextStyle(fontSize: 24, color: bWhite
+                                    .withOpacity(0.9), fontWeight: FontWeight.bold),
+                              )),
+                          Positioned(
+                            width: 250,
+                              left: 30,
+                              top: 50,
+                              child: Text(
+                                lovePoem[index],
+                                style: TextStyle(fontSize: 18, color: bWhite
+                                    .withOpacity(0.9)),
+                              )),
+
+                          Positioned(
+                              left: 280,
+                              top: 130,
+                              child: Row(
+                                children: [
+                                  IconButton(
+                                      onPressed: () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) => MainPage()));
+                                      },
+                                      icon: Icon(
+                                        Icons.chevron_right_outlined,
+                                        color: bWhite,
+                                        size: 39,
+                                      )),
+                                ],
+                              )),
+
+                        ],
+                      ),
                     ),
 
                   );
                 },
               ),
               ListView.builder(
-                itemCount: 4,
-                scrollDirection: Axis.horizontal,
+                itemCount: 5,
+                scrollDirection: Axis.vertical,
                 itemBuilder: (BuildContext context, int index) {
                   return GestureDetector(
                     onTap:(){
@@ -179,22 +250,68 @@ class _BookmarkPageState extends State<BookmarkPage> with TickerProviderStateMix
                     },
                     child: Container(
                       margin: const EdgeInsets.only(right: 15, top: 15),
-                      width: 150,
-                      height: 150,
+                      width: 600,
+                      height: 200,
                       decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: Colors.white,
-                          image: DecorationImage(
-                              image: AssetImage("assets/" + loveImages[index]),
-                              fit: BoxFit.cover)),
+                          borderRadius: BorderRadius.all(Radius.circular(30)),
+                          color: kPrimaryColor.withOpacity(0.6),
+                          boxShadow: [
+                            BoxShadow(
+                                blurRadius: 15,
+                                spreadRadius: 1,
+                                offset: Offset(1, 1),
+                                color: Colors.grey.withOpacity(0.2))
+                          ]),
+                      child: Stack(
+                        children: [
+                          Positioned(
+                              left: 30,
+                              top: 20,
+                              child: Text(
+                                loveHeading[index],
+                                style: TextStyle(fontSize: 24, color: bWhite
+                                    .withOpacity(0.9), fontWeight: FontWeight.bold),
+                              )),
+                          Positioned(
+                              width: 250,
+                              left: 30,
+                              top: 50,
+                              child: Text(
+                                lovePoem[index],
+                                style: TextStyle(fontSize: 18, color: bWhite
+                                    .withOpacity(0.9)),
+                              )),
+
+                          Positioned(
+                              left: 280,
+                              top: 130,
+                              child: Row(
+                                children: [
+                                  IconButton(
+                                      onPressed: () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) => MainPage()));
+                                      },
+                                      icon: Icon(
+                                        Icons.chevron_right_outlined,
+                                        color: bWhite,
+                                        size: 39,
+                                      )),
+                                ],
+                              )),
+
+                        ],
+                      ),
                     ),
 
                   );
                 },
               ),
               ListView.builder(
-                itemCount: 4,
-                scrollDirection: Axis.horizontal,
+                itemCount: 5,
+                scrollDirection: Axis.vertical,
                 itemBuilder: (BuildContext context, int index) {
                   return GestureDetector(
                     onTap:(){
@@ -202,22 +319,68 @@ class _BookmarkPageState extends State<BookmarkPage> with TickerProviderStateMix
                     },
                     child: Container(
                       margin: const EdgeInsets.only(right: 15, top: 15),
-                      width: 150,
-                      height: 150,
+                      width: 600,
+                      height: 200,
                       decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: Colors.white,
-                          image: DecorationImage(
-                              image: AssetImage("assets/" + artImages[index]),
-                              fit: BoxFit.cover)),
+                          borderRadius: BorderRadius.all(Radius.circular(30)),
+                          color: kPrimaryColor.withOpacity(0.6),
+                          boxShadow: [
+                            BoxShadow(
+                                blurRadius: 15,
+                                spreadRadius: 1,
+                                offset: Offset(1, 1),
+                                color: Colors.grey.withOpacity(0.2))
+                          ]),
+                      child: Stack(
+                        children: [
+                          Positioned(
+                              left: 30,
+                              top: 20,
+                              child: Text(
+                                loveHeading[index],
+                                style: TextStyle(fontSize: 24, color: bWhite
+                                    .withOpacity(0.9), fontWeight: FontWeight.bold),
+                              )),
+                          Positioned(
+                              width: 250,
+                              left: 30,
+                              top: 50,
+                              child: Text(
+                                lovePoem[index],
+                                style: TextStyle(fontSize: 18, color: bWhite
+                                    .withOpacity(0.9)),
+                              )),
+
+                          Positioned(
+                              left: 280,
+                              top: 130,
+                              child: Row(
+                                children: [
+                                  IconButton(
+                                      onPressed: () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) => MainPage()));
+                                      },
+                                      icon: Icon(
+                                        Icons.chevron_right_outlined,
+                                        color: bWhite,
+                                        size: 39,
+                                      )),
+                                ],
+                              )),
+
+                        ],
+                      ),
                     ),
 
                   );
                 },
               ),
               ListView.builder(
-                itemCount: 4,
-                scrollDirection: Axis.horizontal,
+                itemCount: 5,
+                scrollDirection: Axis.vertical,
                 itemBuilder: (BuildContext context, int index) {
                   return GestureDetector(
                     onTap:(){
@@ -225,22 +388,68 @@ class _BookmarkPageState extends State<BookmarkPage> with TickerProviderStateMix
                     },
                     child: Container(
                       margin: const EdgeInsets.only(right: 15, top: 15),
-                      width: 150,
-                      height: 150,
+                      width: 600,
+                      height: 200,
                       decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: Colors.white,
-                          image: DecorationImage(
-                              image: AssetImage("assets/" + loveImages[index]),
-                              fit: BoxFit.cover)),
+                          borderRadius: BorderRadius.all(Radius.circular(30)),
+                          color: kPrimaryColor.withOpacity(0.6),
+                          boxShadow: [
+                            BoxShadow(
+                                blurRadius: 15,
+                                spreadRadius: 1,
+                                offset: Offset(1, 1),
+                                color: Colors.grey.withOpacity(0.2))
+                          ]),
+                      child: Stack(
+                        children: [
+                          Positioned(
+                              left: 30,
+                              top: 20,
+                              child: Text(
+                                loveHeading[index],
+                                style: TextStyle(fontSize: 24, color: bWhite
+                                    .withOpacity(0.9), fontWeight: FontWeight.bold),
+                              )),
+                          Positioned(
+                              width: 250,
+                              left: 30,
+                              top: 50,
+                              child: Text(
+                                lovePoem[index],
+                                style: TextStyle(fontSize: 18, color: bWhite
+                                    .withOpacity(0.9)),
+                              )),
+
+                          Positioned(
+                              left: 280,
+                              top: 130,
+                              child: Row(
+                                children: [
+                                  IconButton(
+                                      onPressed: () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) => MainPage()));
+                                      },
+                                      icon: Icon(
+                                        Icons.chevron_right_outlined,
+                                        color: bWhite,
+                                        size: 39,
+                                      )),
+                                ],
+                              )),
+
+                        ],
+                      ),
                     ),
 
                   );
                 },
               ),
               ListView.builder(
-                itemCount: 4,
-                scrollDirection: Axis.horizontal,
+                itemCount: 5,
+                scrollDirection: Axis.vertical,
                 itemBuilder: (BuildContext context, int index) {
                   return GestureDetector(
                     onTap:(){
@@ -248,14 +457,60 @@ class _BookmarkPageState extends State<BookmarkPage> with TickerProviderStateMix
                     },
                     child: Container(
                       margin: const EdgeInsets.only(right: 15, top: 15),
-                      width: 150,
-                      height: 150,
+                      width: 600,
+                      height: 200,
                       decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: Colors.white,
-                          image: DecorationImage(
-                              image: AssetImage("assets/" + artImages[index]),
-                              fit: BoxFit.cover)),
+                          borderRadius: BorderRadius.all(Radius.circular(30)),
+                          color: kPrimaryColor.withOpacity(0.6),
+                          boxShadow: [
+                            BoxShadow(
+                                blurRadius: 15,
+                                spreadRadius: 1,
+                                offset: Offset(1, 1),
+                                color: Colors.grey.withOpacity(0.2))
+                          ]),
+                      child: Stack(
+                        children: [
+                          Positioned(
+                              left: 30,
+                              top: 20,
+                              child: Text(
+                                loveHeading[index],
+                                style: TextStyle(fontSize: 24, color: bWhite
+                                    .withOpacity(0.9), fontWeight: FontWeight.bold),
+                              )),
+                          Positioned(
+                              width: 250,
+                              left: 30,
+                              top: 50,
+                              child: Text(
+                                lovePoem[index],
+                                style: TextStyle(fontSize: 18, color: bWhite
+                                    .withOpacity(0.9)),
+                              )),
+
+                          Positioned(
+                              left: 280,
+                              top: 130,
+                              child: Row(
+                                children: [
+                                  IconButton(
+                                      onPressed: () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) => MainPage()));
+                                      },
+                                      icon: Icon(
+                                        Icons.chevron_right_outlined,
+                                        color: bWhite,
+                                        size: 39,
+                                      )),
+                                ],
+                              )),
+
+                        ],
+                      ),
                     ),
 
                   );

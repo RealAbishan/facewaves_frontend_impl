@@ -142,7 +142,7 @@ class _DetailsPageState extends State<DetailsPage> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          AppLargeText(text: "The Farewell",size: 36,color: kPrimaryColor.withOpacity(0.8),),
+                          AppLargeText(text: "நீ என் தேவதை",size: 36,color: kPrimaryColor.withOpacity(0.8),),
                         ],
                       ),
                       SizedBox(height: 20,),
@@ -161,11 +161,12 @@ class _DetailsPageState extends State<DetailsPage> {
                           Container(
                             width: 350,
                             child: PoemText(
-                              text: "They say the ice will hold so there I go,forced to believe them by my act of trusting people,"
-                              "stepping out on it,and naturally it gaps open and I, forced to carry on coolly "
-                              "by my act of being imperturbable, slide erectly into the water wearing my captain's helmet, "
-                              "waving to the shore with a sad smile, "
-                                  "Goodbye my darlings, goodbye dear one,as the ice meets again over my head with a click.",
+                              text: "உன்னை என் தேவதை என்று நினைத்துதான்"
+                              "வழிபட ஆரம்பித்திருக்கிறேன் ."
+                              "ஒரு வேளை"
+                              "நீ தேவதையாக இல்லாமலிருந்தாலும்"
+                            "என் வழிபாடுகள்"
+                            "உன்னை தேவதை ஆக்கிவிடும் !",
                               color: kPrimaryColor,
                               size: 14,
                             ),
