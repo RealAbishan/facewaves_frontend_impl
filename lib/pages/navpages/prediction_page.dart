@@ -9,6 +9,8 @@ import 'dart:math';
 import 'package:flutter/services.dart';
 import 'package:facewaves_frontend/widgets/custom_button.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:facewaves_frontend/pages/main_page.dart';
+
 
 class PredictionPage extends StatefulWidget {
   const PredictionPage({Key? key}) : super(key: key);
@@ -57,27 +59,63 @@ class _PredictionPageState extends State<PredictionPage> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            padding: const EdgeInsets.only(top: 70, left: 20),
-            child: Row(
+            height: 120,
+            child: Stack(
               children: [
-                Icon(Icons.menu, size: 30, color: kPrimaryColor),
-                Expanded(child: Container()),
-                Container(
-                  margin: const EdgeInsets.only(right: 20),
-                  width: 50,
-                  height: 50,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Colors.grey.withOpacity(0.3)),
-                )
+                Positioned(
+                    left: 10,
+                    top: 60,
+                    child: Row(
+                      children: [
+                        IconButton(
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => MainPage()));
+                            },
+                            icon: Icon(
+                              Icons.chevron_left_rounded,
+                              color: kPrimaryColor,
+                              size: 39,
+                            )),
+                      ],
+                    )),
+                Positioned(
+                    left: 128,
+                    top: 75,
+                    child: Text(
+                      "Generate Poem",
+                      style: TextStyle(
+                          fontSize: 20,
+                          color: kPrimaryColor,
+                          fontWeight: FontWeight.bold),
+                    )),
+                Positioned(
+                    left: 330,
+                    top: 60,
+                    child: Row(
+                      children: [
+                        IconButton(
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => MainPage()));
+                            },
+                            icon: Icon(
+                              Icons.more_vert_outlined,
+                              color: kPrimaryColor,
+                              size: 39,
+                            )),
+                      ],
+                    )),
               ],
             ),
           ),
-          SizedBox(
-            height: 20,
-          ),
+
           Container(
-            padding: const EdgeInsets.only(top: 50),
+            padding: const EdgeInsets.only(top: 40),
             child: Row(
               children: [
                 Container(
