@@ -10,6 +10,7 @@ class SearchPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool showButton = false;
 
     List labelForTitle = [
       "Love",
@@ -26,6 +27,7 @@ class SearchPage extends StatelessWidget {
     return Scaffold(
       body: Column(
       children: [
+
         Container(
           margin: const EdgeInsets.only(left:20, right: 20),
           width: width,
@@ -101,6 +103,7 @@ class SearchPage extends StatelessWidget {
               color: kPrimaryColor.withOpacity(0.8)
           ),
 
+
           child: Stack(
             children: [
               Positioned(
@@ -120,11 +123,18 @@ class SearchPage extends StatelessWidget {
               ),
 
 
-
+              AnimatedSwitcher(
+                duration: const Duration(milliseconds: 250),
+                child: showButton ? ElevatedButton(
+                    onPressed: () => print("Hi!"),
+                    child: const Text("Hello")
+                ) : const SizedBox.shrink(),
+              ),
 
             ],
           ),
         ),
+
 
         SizedBox(height: 20,),
 
