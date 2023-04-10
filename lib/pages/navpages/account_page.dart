@@ -3,10 +3,37 @@ import 'package:flutter/material.dart';
 import 'package:facewaves_frontend/constants/AppColors.dart';
 import 'package:facewaves_frontend/pages/main_page.dart';
 import 'package:facewaves_frontend/authControllers/auth_controller.dart';
+import 'package:image_picker/image_picker.dart';
+import 'dart:io';
+import 'dart:math';
+import 'package:flutter/services.dart';
 
 
-class AccountPage extends StatelessWidget {
+class AccountPage extends StatefulWidget {
   const AccountPage({Key? key}) : super(key: key);
+
+  @override
+  State<AccountPage> createState() => _AccountPageState();
+}
+
+class _AccountPageState extends State<AccountPage> {
+
+  File? image;
+
+  Future selectFromGallery() async {
+    try{
+      final image = await ImagePicker().pickImage(source: ImageSource.gallery);
+      if(image == null) return;
+
+      final imageTemp = File(image.path);
+
+      setState(() => this.image = imageTemp);
+    }
+    on PlatformException catch(e) {
+      print('Failed to pick image: $e');
+    }
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -90,7 +117,10 @@ class AccountPage extends StatelessWidget {
                       backgroundColor: Colors.grey.shade200,
                       child: Padding(
                         padding: const EdgeInsets.all(8), // Border radius
-                        child: ClipOval(child: Image.network('https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_320,q_50/lsci/db/PICTURES/CMS/316500/316500.png')),
+                        child: ClipOval(child:image != null ? Image.file(image!): Image
+                            .network
+                            ('https://img1'
+                            '.hscicdn.com/image/upload/f_auto,t_ds_square_w_320,q_50/lsci/db/PICTURES/CMS/316500/316500.png')),
                       ),
                     )
                 ),
@@ -98,8 +128,11 @@ class AccountPage extends StatelessWidget {
                 Positioned(
                     left: 155,
                     top: 90,
-                    child: Icon(Icons.camera_enhance_outlined, size: 24, 
-                        color:kPrimaryColor.withOpacity(0.4))),
+                    child: GestureDetector(
+                    //  onTap: () => selectFromGallery(),
+                      child: Icon(Icons.camera_enhance_outlined, size: 24,
+                          color:kPrimaryColor.withOpacity(0.4)),
+                    )),
 
               ],
             ),
@@ -369,7 +402,7 @@ class AccountPage extends StatelessWidget {
                 Positioned(
                     left: 45,
                     top: 19,
-                    child: Icon(Icons.copyright_outlined, size: 14, 
+                    child: Icon(Icons.copyright_outlined, size: 14,
                       color:kPrimaryColor.withOpacity(0.7),)),
                 Positioned(
                     left: 60,
@@ -389,3 +422,5 @@ class AccountPage extends StatelessWidget {
     );
   }
 }
+
+
