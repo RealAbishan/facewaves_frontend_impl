@@ -16,10 +16,11 @@ import 'package:dio/dio.dart';
 
 
 class GeneratedPoemPage extends StatelessWidget {
-  const GeneratedPoemPage({Key? key, this.poem, this.title}) : super(key: key);
 
-  final String? poem;
-  final String? title;
+  String poem;
+  GeneratedPoemPage({required this.poem});
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -125,8 +126,9 @@ class GeneratedPoemPage extends StatelessWidget {
                         children: [
                           Container(
                             width: 350,
+                            height: 390,
                             child: PoemText(
-                              text: "Poem",
+                              text: "Poem ${poem}",
                               color: kPrimaryColor,
                               size: 14,
                             ),

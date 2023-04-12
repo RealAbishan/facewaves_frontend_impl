@@ -145,6 +145,8 @@ class _PredictionPageState extends State<PredictionPage> {
                       ],
                     ),
                   ),
+
+                  //Show Selected Image
                   Container(
                     padding: const EdgeInsets.only(top: 40),
                     child: Row(
@@ -169,13 +171,20 @@ class _PredictionPageState extends State<PredictionPage> {
                   SizedBox(
                     height: 20,
                   ),
+
+                  //Image Picking Media
                   Container(
                     margin: const EdgeInsets.only(left: 20, right: 20),
                     child: GestureDetector(
                         child: Row(
                       children: [
+
                         GestureDetector(
-                          onTap: () => selectFromGallery(),
+                          onTap: () async {
+                            var image = await ImagePicker()
+                                .pickImage(source: ImageSource.gallery);
+                            provider.setImage(image);
+                          },
                           child: Container(
                             padding: const EdgeInsets.only(left: 10),
                             width: width * 0.43,
@@ -197,7 +206,7 @@ class _PredictionPageState extends State<PredictionPage> {
                                     left: 20,
                                     top: 19,
                                     child: Icon(
-                                      Icons.browse_gallery_outlined,
+                                      Icons.photo_album_outlined,
                                       size: 24,
                                       color: kPrimaryColor,
                                     )),
@@ -269,6 +278,8 @@ class _PredictionPageState extends State<PredictionPage> {
                   SizedBox(
                     height: 20,
                   ),
+
+                  //Generate Poem
                   Container(
                     child: GestureDetector(
                       onTap: () async {
@@ -313,11 +324,13 @@ class _PredictionPageState extends State<PredictionPage> {
                   SizedBox(
                     height: 20,
                   ),
+
+                  //View Poem in the Generated Poem Screen
                   Container(
                     child: GestureDetector(
                       onTap:(){
                         Navigator.push(context, MaterialPageRoute(builder:
-                            (context) => GeneratedPoemPage()));
+                            (context) => GeneratedPoemPage(poem: provider.response)));
                       },
                       child: Container(
                         margin: const EdgeInsets.only(left: 20, right: 20),
@@ -336,7 +349,7 @@ class _PredictionPageState extends State<PredictionPage> {
                         child: Stack(
                           children: [
                             Positioned(
-                                left: 110,
+                                left: 130,
                                 top: 20,
                                 child: Text(
                                   "View Poem",
@@ -350,10 +363,6 @@ class _PredictionPageState extends State<PredictionPage> {
                       ),
                     ),
                   ),
-
-                  Container(
-                    child: Text(provider.response),
-                  )
                 ],
               );
             })));
@@ -368,8 +377,8 @@ class MyProvider extends ChangeNotifier {
     this.notifyListeners();
   }
 
-  setResponse(res) {
-    this.response = res;
+  setResponse(decode) {
+    this.response = decode;
     this.notifyListeners();
   }
 
@@ -398,6 +407,17 @@ class MyProvider extends ChangeNotifier {
           element != '"' &&
           element != "}") res += element;
     });
+
+    // var s = res;
+    // var re = RegExp(r'^#?([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$');
+    // var matches = re.allMatches(s);
+    // var codePoints = [
+    //   for (var match in matches)
+    //     int.parse(match.namedGroup('codePoint')!, radix: 16),
+    // ];
+    // var decoded = String.fromCharCodes(codePoints);
+    // return decoded;
+
     return res;
   }
 }
