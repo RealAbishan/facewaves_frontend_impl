@@ -10,6 +10,7 @@ import 'package:flutter/services.dart';
 import 'package:facewaves_frontend/widgets/custom_button.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:facewaves_frontend/pages/main_page.dart';
+import 'package:facewaves_frontend/authControllers/auth_controller.dart';
 
 
 class PredictionPage extends StatefulWidget {
@@ -54,6 +55,8 @@ class _PredictionPageState extends State<PredictionPage> {
 
   @override
   Widget build(BuildContext context) {
+    final double height = MediaQuery.of(context).size.height;
+    final double width = MediaQuery.of(context).size.width;
     return Scaffold(
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -135,42 +138,131 @@ class _PredictionPageState extends State<PredictionPage> {
           SizedBox(
             height: 20,
           ),
-          GestureDetector(
-            onTap: () => selectFromGallery(),
-            child: Container(
-                margin: const EdgeInsets.only(left: 20, right: 20),
-                child: CustomResponsiveButton(
-                  // iconData: Icons.camera_enhance_outlined,
-                  text: "Select from Gallery",
-                )),
+
+          Container(
+            margin: const EdgeInsets.only(left: 20, right: 20),
+            child: GestureDetector(
+              child:Row(
+                children: [
+                  GestureDetector(
+                    onTap: () => selectFromGallery(),
+                    child: Container(
+                      padding: const EdgeInsets.only(left: 10),
+                      width: width * 0.43,
+                      height: height * 0.07,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(30)),
+                          color: bWhite.withOpacity(0.8),
+                          boxShadow: [
+                            BoxShadow(
+                                blurRadius: 10,
+                                spreadRadius: 7,
+                                offset: Offset(1,1),
+                                color: Colors.grey.withOpacity(0.3)
+                            )
+                          ]
+                      ),
+                      child: Stack(
+                        children: [
+                          Positioned(
+                              left: 20,
+                              top: 19,
+                              child: Icon(Icons.browse_gallery_outlined, size: 24, color:
+                              kPrimaryColor,)),
+                          Positioned(
+                              left: 60,
+                              top: 20,
+                              child: Text(
+                                "Gallery",
+                                style: TextStyle(fontSize: 18, color: kPrimaryColor,
+                                    fontWeight: FontWeight.bold),
+                              )),
+                        ],
+                      ),
+                    ),
+                  ),
+
+                  SizedBox(width: 10,),
+                  GestureDetector(
+                    onTap: () => selectFromGallery(),
+                    child: Container(
+                      padding: const EdgeInsets.only(left: 10),
+                      width: width * 0.43,
+                      height: height * 0.07,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(30)),
+                          color: bWhite.withOpacity(0.8),
+                          boxShadow: [
+                            BoxShadow(
+                                blurRadius: 10,
+                                spreadRadius: 7,
+                                offset: Offset(1,1),
+                                color: Colors.grey.withOpacity(0.3)
+                            )
+                          ]
+                      ),
+                      child: Stack(
+                        children: [
+                          Positioned(
+                              left: 20,
+                              top: 19,
+                              child: Icon(Icons.camera_enhance_outlined, size: 24, color:
+                              kPrimaryColor,)),
+                          Positioned(
+                              left: 60,
+                              top: 20,
+                              child: Text(
+                                "Camera",
+                                style: TextStyle(fontSize: 18, color: kPrimaryColor,
+                                    fontWeight: FontWeight.bold),
+                              )),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              )
+            ),
           ),
+
           SizedBox(
-            height: 10,
+            height: 30,
           ),
-          GestureDetector(
-            onTap: () {
-              selectFromCamera();
-            },
-            child: Container(
+
+          Container(
+            child: GestureDetector(
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => GeneratedPoemPage()));
+              },
+              child: Container(
                 margin: const EdgeInsets.only(left: 20, right: 20),
-                child: CustomResponsiveButton(
-                  // iconData: Icons.camera_enhance_outlined,
-                  text: "Select from Camera",
-                )),
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          GestureDetector(
-            onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => GeneratedPoemPage()));
-            },
-            child: Container(
-              margin: const EdgeInsets.only(left: 20, right: 20),
-              child: CustomResponsiveButton(
-                // iconData: Icons.camera_enhance_outlined,
-                text: "Generate Poem",
+                width: width * 0.879,
+                height: height * 0.07,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(30)),
+                    color: bWhite.withOpacity(0.8),
+                    boxShadow: [
+                      BoxShadow(
+                          blurRadius: 10,
+                          spreadRadius: 7,
+                          offset: Offset(1,1),
+                          color: Colors.grey.withOpacity(0.3)
+                      )
+                    ]
+                ),
+                child: Stack(
+                  children: [
+                    Positioned(
+                        left: 110,
+                        top: 20,
+                        child: Text(
+                          "Generate Poem",
+                          style: TextStyle(fontSize: 18, color: kPrimaryColor,
+                              fontWeight: FontWeight.bold),
+                        )),
+                  ],
+                ),
               ),
             ),
           ),
