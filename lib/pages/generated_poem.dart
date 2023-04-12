@@ -14,55 +14,13 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:dio/dio.dart';
 
-class GeneratedPoemPage extends StatefulWidget {
-  const GeneratedPoemPage({Key? key}) : super(key: key);
 
-  @override
-  State<GeneratedPoemPage> createState() => _GeneratedPoemPageState();
-}
+class GeneratedPoemPage extends StatelessWidget {
+  const GeneratedPoemPage({Key? key, this.poem, this.title}) : super(key: key);
 
-class _GeneratedPoemPageState extends State<GeneratedPoemPage> {
+  final String? poem;
+  final String? title;
 
-  // @override
-  // void initState(){
-  //   super.initState();
-  //   getData();
-  // }
-  //
-  // void getData() async{
-  //   try{
-  //     var response = await Dio.get
-  //       ('localhost:8080/api/usr-mgt/upload/getPoems');
-  //     // var jsonData = json.decode(data.body);
-  //     if(response.statusCode ==200){
-  //       setState(() {
-  //         jsonList = response.data
-  //       });
-  //     }
-  //     else{
-  //       print(response.statusCode)
-  //     }
-  //
-  //   }
-  //   catch(e){
-  //     print(e)
-  //   }
-  // }
-  //
-  // var poems = List<PoemModel>.generate(200, (index) => null);
-  //
-  // Future<List<PoemModel>> getPoems() async {
-  //   var data = await http.get('localhost:8080/api/usr-mgt/upload/getPoems');
-  //   var jsonData = json.decode(data.body);
-  //
-  //   List<PoemModel> poem = [];
-  //   for (var e in jsonData) {
-  //     PoemModel poemModel = new PoemModel();
-  //     poemModel.title = e["title"];
-  //     poemModel.poem = e["poem"];
-  //   }
-  //   return poem;
-  // }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -74,7 +32,7 @@ class _GeneratedPoemPageState extends State<GeneratedPoemPage> {
 
 
             Positioned(
-                left:0,
+                left: 0,
                 right: 0,
                 child: Container(
                   width: double.maxFinite,
@@ -95,9 +53,10 @@ class _GeneratedPoemPageState extends State<GeneratedPoemPage> {
                 top: 70,
                 child: Row(
                   children: [
-                    IconButton(onPressed: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => MainPage()));
-                    }, icon:Icon(Icons.chevron_left_rounded,
+                    IconButton(onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => MainPage()));
+                    }, icon: Icon(Icons.chevron_left_rounded,
                       color: kPrimaryColor,
                       size: 39,
                     )
@@ -129,7 +88,10 @@ class _GeneratedPoemPageState extends State<GeneratedPoemPage> {
                 top: 320,
                 child: Container(
                   padding: const EdgeInsets.only(left: 20, right: 20, top: 30),
-                  width: MediaQuery.of(context).size.width,
+                  width: MediaQuery
+                      .of(context)
+                      .size
+                      .width,
                   height: 500,
                   decoration: BoxDecoration(
                       color: bWhite,
@@ -143,7 +105,9 @@ class _GeneratedPoemPageState extends State<GeneratedPoemPage> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          AppLargeText(text: "காவியம்",size: 36,color: kPrimaryColor.withOpacity(0.8),),
+                          AppLargeText(text: "காவியம்",
+                            size: 36,
+                            color: kPrimaryColor.withOpacity(0.8),),
                         ],
                       ),
                       SizedBox(height: 20,),
@@ -162,7 +126,7 @@ class _GeneratedPoemPageState extends State<GeneratedPoemPage> {
                           Container(
                             width: 350,
                             child: PoemText(
-                              text: "சிறகிலிருந்து பிரிந்த இறகு ஒன்று காற்றின் தீராத பக்கங்களில் ஒரு பறவையின் வாழ்வை எழுதிச் செல்கிறது",
+                              text: "Poem",
                               color: kPrimaryColor,
                               size: 14,
                             ),
@@ -194,13 +158,13 @@ class _GeneratedPoemPageState extends State<GeneratedPoemPage> {
                         color: kPrimaryColor,
                         backgroundColor: Colors.white,
                         borderColor: kPrimaryColor,
-                        isIcon:true,
-                        icon:Icons.favorite_border
+                        isIcon: true,
+                        icon: Icons.favorite_border
                     ),
 
                     SizedBox(width: 20,),
                     ResponsiveButton(
-                      isResponsive:true,
+                      isResponsive: true,
                     )
                   ],
                 ))
@@ -210,3 +174,4 @@ class _GeneratedPoemPageState extends State<GeneratedPoemPage> {
     );
   }
 }
+
