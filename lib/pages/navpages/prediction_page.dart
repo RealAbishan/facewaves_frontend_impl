@@ -383,7 +383,7 @@ class MyProvider extends ChangeNotifier {
   }
 
   Future<String> makePostRequest() async {
-    String url = "http://127.0.0.1:9090/predict";
+    String url = "http://127.0.0.1:8080/predict";
     final headers = {
       'Content-Type': 'multipart/form-data',
     };
@@ -395,8 +395,8 @@ class MyProvider extends ChangeNotifier {
         filename: 'img.png')); // Now we can make this call
     http.StreamedResponse r = await request.send();
     var res = '';
-    var finalstring = await r.stream.transform(utf8.decoder).join();
-    var hh = finalstring.split(":");
+    var finalString = await r.stream.transform(utf8.decoder).join();
+    var hh = finalString.split(":");
     String ans = hh[1];
     var array = ans.split('');
 
