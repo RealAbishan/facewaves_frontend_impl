@@ -77,6 +77,8 @@ class _PredictionPageState extends State<PredictionPage> {
   //   request.send().then((value) => print(value.statusCode));
   // }
 
+
+
   @override
   Widget build(BuildContext context) {
     final double height = MediaQuery.of(context).size.height;
@@ -383,7 +385,7 @@ class MyProvider extends ChangeNotifier {
   }
 
   Future<String> makePostRequest() async {
-    String url = "http://127.0.0.1:8080/predict";
+    String url = "http://127.0.0.1:9090/predict";
     final headers = {
       'Content-Type': 'multipart/form-data',
     };
@@ -408,16 +410,32 @@ class MyProvider extends ChangeNotifier {
           element != "}") res += element;
     });
 
-    // var s = res;
-    // var re = RegExp(r'^#?([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$');
-    // var matches = re.allMatches(s);
-    // var codePoints = [
-    //   for (var match in matches)
-    //     int.parse(match.namedGroup('codePoint')!, radix: 16),
-    // ];
-    // var decoded = String.fromCharCodes(codePoints);
-    // return decoded;
+    // var decodedResponse = ascii.decoder.;
+    //var decodedResponse = Text(utf8.);
 
     return res;
   }
+
+  //Decode the Response
+
+  // String main(String res) {
+  //   var s = res ;
+  //   var re = RegExp(
+  //     r'(%(?<asciiValue>[0-9A-Fa-f]{2}))'
+  //     r'|(%u(?<codePoint>[0-9A-Fa-f]{4}))'
+  //     r'|.',
+  //   );
+  //   var matches = re.allMatches(s);
+  //   var codePoints = <int>[];
+  //   for (var match in matches) {
+  //     var codePoint = match.namedGroup('asciiValue') ?? match.namedGroup('codePoint');
+  //     if (codePoint != null) {
+  //       codePoints.add(int.parse(codePoint, radix: 16));
+  //     } else {
+  //       codePoints += match.group(0)!.runes.toList();
+  //     }
+  //   }
+  //   var decoded = String.fromCharCodes(codePoints);
+  //   print(decoded);
+  // }
 }
