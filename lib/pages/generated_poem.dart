@@ -128,7 +128,7 @@ class GeneratedPoemPage extends StatelessWidget {
                             width: 350,
                             height: 390,
                             child: PoemText(
-                              text: "Poem ${poem}",
+                              text: "${poem}",
                               color: kPrimaryColor,
                               size: 14,
                             ),

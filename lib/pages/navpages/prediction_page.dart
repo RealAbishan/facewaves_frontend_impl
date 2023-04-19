@@ -419,7 +419,29 @@ class MyProvider extends ChangeNotifier {
     // var decodedResponse = ascii.decoder.;
     //var decodedResponse = Text(utf8.);
 
-    return res;
+    // String tamilString = res;
+    // List<int> codeUnits = tamilString.codeUnits;
+    // String decodedString = utf8.decode(codeUnits);
+    // print(decodedString);
+
+    // final String str = res;
+    // final Pattern unicodePattern = new RegExp(r'\\u([0-9A-Fa-f]{4})');
+    // final String newStr = str.replaceAllMapped(unicodePattern, (Match unicodeMatch) {
+    //   final int hexCode = int.parse(unicodeMatch.group(1), radix: 16);
+    //   final unicode = String.fromCharCode(hexCode);
+    //   return unicode;
+    // });
+    // print('Old string: $str');
+    // print('New string: $newStr');
+
+    String? tamilString = res;
+    String decodedString = tamilString?.replaceAllMapped(
+      RegExp(r'\\u([0-9a-fA-F]{4})'),
+          (Match m) => String.fromCharCode(int.parse(m.group(1)!, radix: 16)),
+    ) ?? '';
+    print(decodedString); // Output: தமிழ் // Output: தமிழ்
+
+    return decodedString;
   }
 
   //Decode the Response
