@@ -186,6 +186,12 @@ class _PredictionPageState extends State<PredictionPage> {
                             var image = await ImagePicker()
                                 .pickImage(source: ImageSource.gallery);
                             provider.setImage(image);
+
+                            if (image == null) return;
+
+                            final imageTemp = File(image.path);
+
+                            setState(() => this.image = imageTemp);
                           },
                           child: Container(
                             padding: const EdgeInsets.only(left: 10),
@@ -385,7 +391,7 @@ class MyProvider extends ChangeNotifier {
   }
 
   Future<String> makePostRequest() async {
-    String url = "http://127.0.0.1:9090/predict";
+    String url = "http://127.0.0.1:9999/predict";
     final headers = {
       'Content-Type': 'multipart/form-data',
     };

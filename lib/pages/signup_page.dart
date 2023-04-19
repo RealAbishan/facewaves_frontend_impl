@@ -152,23 +152,34 @@ class SignupPage extends StatelessWidget {
                     .trim(), passwordController.text.trim());
               },
               child: Container(
-                width: width * 0.5,
-                height: height * 0.08,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(30),
-                  image: DecorationImage(
-                      image: AssetImage(
-                          "assets/btnBg.png"
-                      ),
-                      fit: BoxFit.cover
-                  ),
-                ),
-                child: Center(
-                  child: Text("Sign Up",
-                    style: TextStyle(
-                        fontSize: 36,
-                        fontWeight: FontWeight.bold,
-                        color: bWhite
+                child: GestureDetector(
+                  child: Container(
+                    margin: const EdgeInsets.only(left: 20, right: 20),
+                    width: width * 0.879,
+                    height: height * 0.07,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(30)),
+                        color: bWhite.withOpacity(0.8),
+                        boxShadow: [
+                          BoxShadow(
+                              blurRadius: 10,
+                              spreadRadius: 7,
+                              offset: Offset(1, 1),
+                              color: Colors.grey.withOpacity(0.3))
+                        ]),
+                    child: Stack(
+                      children: [
+                        Positioned(
+                            left: 135,
+                            top: 15,
+                            child: Text(
+                              "Sign Up",
+                              style: TextStyle(
+                                  fontSize: 24,
+                                  color: kPrimaryColor,
+                                  fontWeight: FontWeight.bold),
+                            )),
+                      ],
                     ),
                   ),
                 ),
