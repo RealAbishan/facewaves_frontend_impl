@@ -7,6 +7,8 @@ import 'package:facewaves_frontend/pages/navpages/search_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:facewaves_frontend/authControllers/auth_controller.dart';
+import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
+
 class MainPage extends StatefulWidget {
   //final String email;
   const MainPage({Key? key}) : super(key: key);

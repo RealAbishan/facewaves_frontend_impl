@@ -78,20 +78,17 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                   Expanded(child: Container()),
                   Container(
                     margin:const EdgeInsets.only(right: 20),
-                    width: 50,
-                    height: 50,
+                    child: Icon(Icons.notifications, size: 30, color:
+                    kPrimaryColor,),
 
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Colors.grey.withOpacity(0.3)
-                    ),
+
                   )
                 ],
               ),
             ),
           ),
 
-          SizedBox(height: 15,),
+          SizedBox(height: 30,),
 
 
           //Disciver Text

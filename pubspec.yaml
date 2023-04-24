@@ -49,6 +49,7 @@ dependencies:
   line_awesome_flutter: ^1.0.1
   flutter_screenutil: ^5.7.0
   animated_theme_switcher: ^1.0.5
+  animated_bottom_navigation_bar: ^0.3.3
 
 dev_dependencies:
   flutter_test:

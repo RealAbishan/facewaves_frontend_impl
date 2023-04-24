@@ -9,6 +9,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.1.0"
+  animated_bottom_navigation_bar:
+    dependency: "direct main"
+    description:
+      name: animated_bottom_navigation_bar
+      sha256: "2bedd1236d96f4305e6299f68d9f95a923f05ce8e47c2e70d7ed94d709d5f6d6"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.3.3"
   animated_theme_switcher:
     dependency: "direct main"
     description:
