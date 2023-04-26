@@ -391,7 +391,7 @@ class MyProvider extends ChangeNotifier {
   }
 
   Future<String> makePostRequest() async {
-    String url = "http://127.0.0.1:9999/predict";
+    String url = "http://192.168.8.104:9898/predict";
     final headers = {
       'Content-Type': 'multipart/form-data',
     };

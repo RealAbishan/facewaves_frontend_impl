@@ -294,7 +294,7 @@ class SearchPage extends StatelessWidget {
                 Positioned(
                     top: 17,
                     child: Text(
-                      "ஆயிரம் கூட்டத்திலும் தனியாய்",
+                      "கூட்டத்திலும் தனியாய்",
                       style: TextStyle(fontSize: 24, color: kPrimaryColor
                           .withOpacity(0.9), fontWeight: FontWeight.bold),
                     )),

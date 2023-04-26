@@ -107,7 +107,7 @@ class GeneratedPoemPage extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           AppLargeText(text: "உங்களுக்காய் ஒரு கவிதை",
-                            size: 24,
+                            size: 22,
                             color: kPrimaryColor.withOpacity(0.8),),
                         ],
                       ),
@@ -130,7 +130,7 @@ class GeneratedPoemPage extends StatelessWidget {
                             child: PoemText(
                               text: "${poem}",
                               color: kPrimaryColor,
-                              size: 14,
+                              size: 18,
                             ),
                           ),
                           //     AppText(
